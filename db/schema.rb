@@ -18,10 +18,10 @@ ActiveRecord::Schema.define(version: 20170116142929) do
   enable_extension "postgis"
 
   create_table "locations", force: :cascade do |t|
-    t.string    "name",                                                                  null: false
-    t.geography "area",       limit: {:srid=>4326, :type=>"polygon", :geographic=>true}, null: false
-    t.datetime  "created_at",                                                            null: false
-    t.datetime  "updated_at",                                                            null: false
+    t.string   "name",                                            null: false
+    t.geometry "area",       limit: {:srid=>0, :type=>"polygon"}, null: false
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
   end
 
 end

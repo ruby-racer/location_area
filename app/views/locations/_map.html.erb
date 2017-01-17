@@ -1,0 +1,26 @@
+<% content_for :head do %>
+  <%=
+    javascript_include_tag(
+      'https://maps.googleapis.com/maps/api/js?libraries=drawing&key=AIzaSyCQBZAsGTQHFPSAQ2dx2BmTO6KJe8UF4Sc'
+    )
+  %>
+<% end %>
+
+<header class="page-header">
+  <h1>
+    Map
+
+    <div class="pull-right">
+    <%= link_to('Edit Location', edit_location_path(@location), class: 'btn btn-success') if action_name == 'show' %>
+    <%=
+      link_to_unless_current('Locations', { action: :index }, class: 'btn btn-primary') do
+        link_to('New Location', { action: :new }, class: 'btn btn-primary')
+      end
+    %>
+    </div>
+  </h1>
+</header>
+
+<div id="map" data-polygons="<%= data_for_google_map(@location) %>"></div>
+
+<hr>

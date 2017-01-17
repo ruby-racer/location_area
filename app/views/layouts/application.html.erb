@@ -2,13 +2,19 @@
 <html>
 <head>
   <title>LocationArea</title>
-  <%= stylesheet_link_tag    'application', media: 'all', data: { turbolinks_track: true } %>
-  <%= javascript_include_tag 'application', data: { turbolinks_track: true } %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= yield(:head) if content_for?(:head) %>
+  <%= javascript_include_tag path_to_js_for_current_page %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="container">
+    <div class="flash_messages">
+      <%= flash_messages %>
+    </div>
 
-<%= yield %>
-
+  <%= yield %>
+  </div>
 </body>
 </html>

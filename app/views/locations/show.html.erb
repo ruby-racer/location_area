@@ -1,0 +1,21 @@
+<%= render partial: 'map' %>
+
+<table class="table table-bordered js-coordinates-table">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>Latitude</th>
+    <th>Longitude</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% points_coordinates(@location).each_with_index do |coordinates, index| %>
+    <tr>
+      <td><%= index + 1 %></td>
+      <td><%= coordinates[:lat] %></td>
+      <td><%= coordinates[:lng] %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

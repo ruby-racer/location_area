@@ -13,4 +13,8 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs
-//= require turbolinks
+//= require rails.validations
+//= require rails.validations.simple_form
+//= require DataTables/jquery.dataTables.min
+//= require DataTables/dataTables.bootstrap.min
+//= require plugins/close_flash_massages
