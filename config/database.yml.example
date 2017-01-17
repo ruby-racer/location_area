@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgis
+  username: postgres
+  password:
+  host: localhost
+  schema_search_path: public
+  pool: 5
+
+development:
+  <<: *default
+  database: location_area_development
+
+test:
+  <<: *default
+  database: location_area_test
+
+production:
+  <<: *default
+  database: location_area_production
+  username: location_area
+  password: <%= ENV['LOCATION_AREA_DATABASE_PASSWORD'] %>
+
