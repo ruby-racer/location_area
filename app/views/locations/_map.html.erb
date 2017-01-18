@@ -11,12 +11,10 @@
     Map
 
     <div class="pull-right">
+    <%= link_to('New Locations', new_location_path, class: 'btn btn-success') if action_name == 'index' %>
+    <%= link_to('Show Location', location_path(@location), class: 'btn btn-success') if action_name == 'edit' %>
     <%= link_to('Edit Location', edit_location_path(@location), class: 'btn btn-success') if action_name == 'show' %>
-    <%=
-      link_to_unless_current('Locations', { action: :index }, class: 'btn btn-primary') do
-        link_to('New Location', { action: :new }, class: 'btn btn-primary')
-      end
-    %>
+    <%= link_to('Locations', locations_path, class: 'btn btn-primary') unless action_name == 'index' %>
     </div>
   </h1>
 </header>

@@ -30,7 +30,6 @@ class LocationsController < ApplicationController
     if @location.update(location_params)
       redirect_to location_path(@location), flash: { success: 'Location was successfully updated' }
     else
-      flash[:error] = 'Please draw an area on the map'
       render :edit
     end
   end

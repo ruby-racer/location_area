@@ -27,7 +27,6 @@
               "class": settings.error_class,
               text: message
             });
-            console.log(wrapper);
             element.parent().append(errorElement);
           }
           wrapper.addClass(settings.wrapper_error_class);
